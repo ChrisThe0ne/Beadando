@@ -3,27 +3,29 @@
 <?php else : ?>
 
 	<?php
-	if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['addWorker'])) {
+	if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['addPlayer'])) {
 		$postData = [
-			'first_name' => $_POST['first_name'],
-			'last_name' => $_POST['last_name'],
-			'email' => $_POST['email'],
-			'gender' => $_POST['gender'],
-			'nationality' => $_POST['nationality']
+			'name' => $_POST['name'],
+			'club' => $_POST['club'],
+			'nationality' => $_POST['nationality'],
+			'league' => $_POST['league'],
+			'pace' => $_POST['pace'],
+			'shooting' => $_POST['shooting'],
+			'defending' => $_POST['defending']
 		];
 
-		if(empty($postData['first_name']) || empty($postData['last_name']) || empty($postData['email']) || empty($postData['nationality']) || $postData['gender'] < 0 && $postData['gender'] > 2) {
+		if(empty($postData['name']) || empty($postData['club']) || empty($postData['nationality']) || empty($postData['league']) || empty($postData['pace']) || empty($postData['shooting']) || empty($postData['defending'])) {
 			echo "Hiányzó adat(ok)!";
-		} else if(!filter_var($postData['email'], FILTER_VALIDATE_EMAIL)) {
-			echo "Hibás email formátum!";
 		} else {
-			$query = "INSERT INTO workers (first_name, last_name, email, gender, nationality) VALUES (:first_name, :last_name, :email, :gender, :nationality)";
+			$query = "INSERT INTO players (name, club, nationality, league, pace, shooting, defending) VALUES (:name, :club, :nationality, :league, :pace, :shooting, :defending )";
 			$params = [
-				':first_name' => $postData['first_name'],
-				':last_name' => $postData['last_name'],
-				':email' => $postData['email'],
-				':gender' => $postData['gender'],
-				':nationality' => $postData['nationality']
+				':name' => $postData['name'],
+				':club' => $postData['club'],
+				':nationality' => $postData['nationality'],
+				':league' => $postData['league'],
+				':pace' => $postData['pace'],
+				':shooting' => $postData['shooting'],
+				':defending' => $postData['defending']
 			];
 			require_once DATABASE_CONTROLLER;
 			if(!executeDML($query, $params)) {
@@ -36,39 +38,59 @@
 	<form method="post">
 		<div class="form-row">
 			<div class="form-group col-md-6">
-				<label for="workerFirstName">First Name</label>
-				<input type="text" class="form-control" id="workerFirstName" name="first_name">
+				<label for="playerName">Név</label>
+				<input type="text" class="form-control" id="playerName" name="name">
 			</div>
 			<div class="form-group col-md-6">
-				<label for="workerLastName">Last Name</label>
-				<input type="text" class="form-control" id="workerLastName" name="last_name">
+				<label for="playerCLub">Klub</label>
+				<input type="text" class="form-control" id="playerClub" name="club">
+			</div>
+		</div>
+
+				<div class="form-row">
+			<div class="form-group col-md-12">
+				<label for="playerNationality">Nemzetiség</label>
+				<input type="text" class="form-control" id="playerNationality" name="nationality">
 			</div>
 		</div>
 
 		<div class="form-row">
 			<div class="form-group col-md-12">
-				<label for="workerEmail">Email</label>
-				<input type="email" class="form-control" id="workerEmail" name="email">
+				<label for="workerLeague">Liga</label>
+				<select class="form-control" id="workerLeague" name="league">
+		      		<option value="0">Premier League</option>
+		      		<option value="1">LaLiga</option>
+		      		<option value="2">Serie A</option>
+		      		<option value="3">Bundesliga</option>
+		      		<option value="4">Bundesliga</option>
+		      		<option value="5">Other</option>
+		    	</select>
 			</div>
 		</div>
+		
 		<div class="form-row">
 			<div class="form-group col-md-12">
-		    	<label for="workerGender">Gender</label>
-		    	<select class="form-control" id="workerGender" name="gender">
-		      		<option value="0">Female</option>
-		      		<option value="1">Male</option>
-		      		<option value="2">Other</option>
-		    	</select>
+		    	<label for="playerPace">Gyorsaság (1-99)</label>
+				<input type="number" class="form-control" id="playerPace" name="pace">
 		  	</div>
 		</div>
 
-		<div class="form-row">
+				<div class="form-row">
 			<div class="form-group col-md-12">
-				<label for="workerNationality">Nationality</label>
-				<input type="text" class="form-control" id="workerNationality" name="nationality">
-			</div>
+		    	<label for="playerShooting">Lövés (1-99)</label>
+				<input type="number" class="form-control" id="playerShooting" name="shooting">
+		  	</div>
 		</div>
 
-		<button type="submit" class="btn btn-primary" name="addWorker">Add Worker</button>
+				<div class="form-row">
+			<div class="form-group col-md-12">
+		    	<label for="playerDefending">Védekezés (1-99)</label>
+				<input type="number" class="form-control" id="playerDefending" name="defending">
+		  	</div>
+		</div>
+
+
+
+		<button type="submit" class="btn btn-primary" name="addPlayer">Játékos hozzáadása</button>
 	</form>
 <?php endif; ?>

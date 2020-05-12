@@ -4,3 +4,12 @@ body {
 a {
 	color: #2C5F2D;
 }
+input[type=text] {
+	width: 20%;
+}
+input[type=select] {
+	width: 20%;
+}
+input[type=number] {
+	width: 5%;
+}
