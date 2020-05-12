@@ -1,2 +1,2 @@
 <hr>
-<center>Copyright &copy; 2020 Norbert Szűcs</center>
+<center>Copyright &copy; 2020 Bencsik Krisztián IL10ZS</center>
