@@ -18,8 +18,7 @@ else:
 		} else {
 			if(empty($postData['first_name']) || empty($postData['last_name']) || empty($postData['email']) || empty($postData['nationality']) || $postData['gender'] < 0 && $postData['gender'] > 2) {
 				echo "Hiányzó adat(ok)!";
-			} else if(!filter_var($postData['email'], FILTER_VALIDATE_EMAIL)) {
-				echo "Hibás email formátum!";
+
 			} else {
 				$query = "UPDATE workers SET first_name = :first_name, last_name = :last_name, email = :email, gender = :gender, nationality = :nationality WHERE id = :id";
 				$params = [
