@@ -14,7 +14,7 @@
 			'defending' => $_POST['defending']
 		];
 
-		if(empty($postData['name']) || empty($postData['club']) || empty($postData['nationality']) || empty($postData['league']) || empty($postData['pace']) || empty($postData['shooting']) || empty($postData['defending'])) {
+		if(empty($postData['name']) || empty($postData['club']) || empty($postData['nationality']) || empty($postData['pace']) || empty($postData['shooting']) || empty($postData['defending'])) {
 			echo "Hiányzó adat(ok)!";
 		} else {
 			$query = "INSERT INTO players (name, club, nationality, league, pace, shooting, defending) VALUES (:name, :club, :nationality, :league, :pace, :shooting, :defending )";

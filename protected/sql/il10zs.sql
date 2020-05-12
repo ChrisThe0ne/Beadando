@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1:3308
--- Létrehozás ideje: 2020. Máj 12. 19:40
+-- Létrehozás ideje: 2020. Máj 12. 21:57
 -- Kiszolgáló verziója: 8.0.18
 -- PHP verzió: 7.3.12
 
@@ -35,11 +35,11 @@ CREATE TABLE IF NOT EXISTS `players` (
   `club` varchar(64) NOT NULL,
   `nationality` varchar(64) NOT NULL,
   `league` varchar(64) NOT NULL,
-  `pace` int(2) NOT NULL,
-  `shooting` int(2) NOT NULL,
-  `defending` int(2) NOT NULL,
+  `pace` int(11) NOT NULL,
+  `shooting` int(11) NOT NULL,
+  `defending` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- A tábla adatainak kiíratása `players`
