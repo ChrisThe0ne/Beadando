@@ -7,8 +7,8 @@ a {
 input[type=text] {
 	width: 20%;
 }
-input[type=select] {
-	width: 20%;
+select {
+	width: 100px;
 }
 input[type=number] {
 	width: 5%;

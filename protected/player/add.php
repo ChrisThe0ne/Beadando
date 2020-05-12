@@ -37,11 +37,11 @@
 
 	<form method="post">
 		<div class="form-row">
-			<div class="form-group col-md-6">
+			<div class="form-group col-md-12">
 				<label for="playerName">Név</label>
 				<input type="text" class="form-control" id="playerName" name="name">
 			</div>
-			<div class="form-group col-md-6">
+			<div class="form-group col-md-12">
 				<label for="playerCLub">Klub</label>
 				<input type="text" class="form-control" id="playerClub" name="club">
 			</div>
@@ -56,8 +56,8 @@
 
 		<div class="form-row">
 			<div class="form-group col-md-12">
-				<label for="workerLeague">Liga</label>
-				<select class="form-control" id="workerLeague" name="league">
+				<label for="playerLeague">Liga</label>
+				<select class="form-control" id="playerLeague" name="league">
 		      		<option value="0">Premier League</option>
 		      		<option value="1">LaLiga</option>
 		      		<option value="2">Serie A</option>
