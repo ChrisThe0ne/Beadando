@@ -1,1 +1,1 @@
-Bencsik Krisztián beadandó - Égitestek
+Bencsik Krisztián beadandó - Futballisták és csapatok

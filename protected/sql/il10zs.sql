@@ -2,10 +2,10 @@
 -- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
--- Gép: 127.0.0.1
--- Létrehozás ideje: 2020. Máj 03. 13:22
--- Kiszolgáló verziója: 10.4.11-MariaDB
--- PHP verzió: 7.4.1
+-- Gép: 127.0.0.1:3308
+-- Létrehozás ideje: 2020. Máj 12. 19:40
+-- Kiszolgáló verziója: 8.0.18
+-- PHP verzió: 7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,8 +19,34 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Adatbázis: `webprog2_zh`
+-- Adatbázis: `il10zs`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Tábla szerkezet ehhez a táblához `players`
+--
+
+DROP TABLE IF EXISTS `players`;
+CREATE TABLE IF NOT EXISTS `players` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(64) NOT NULL,
+  `club` varchar(64) NOT NULL,
+  `nationality` varchar(64) NOT NULL,
+  `league` varchar(64) NOT NULL,
+  `pace` int(2) NOT NULL,
+  `shooting` int(2) NOT NULL,
+  `defending` int(2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- A tábla adatainak kiíratása `players`
+--
+
+INSERT INTO `players` (`id`, `name`, `club`, `nationality`, `league`, `pace`, `shooting`, `defending`) VALUES
+(1, 'Cristiano Ronaldo', 'Juventus', 'Portugal', 'Serie A', 91, 93, 46);
 
 -- --------------------------------------------------------
 
@@ -28,41 +54,23 @@ SET time_zone = "+00:00";
 -- Tábla szerkezet ehhez a táblához `users`
 --
 
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(64) NOT NULL,
   `last_name` varchar(64) NOT NULL,
   `email` varchar(250) NOT NULL,
   `password` varchar(250) NOT NULL,
-  `permission` int(1) UNSIGNED NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `permission` int(1) UNSIGNED NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- A tábla adatainak kiíratása `users`
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `permission`) VALUES
-(1, 'Admin', 'istrator', 'admin@admin.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 1);
-
---
--- Indexek a kiírt táblákhoz
---
-
---
--- A tábla indexei `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
-
---
--- A kiírt táblák AUTO_INCREMENT értéke
---
-
---
--- AUTO_INCREMENT a táblához `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+(2, 'Krisztián', 'Bencsik', 'bencsikkrisztian1999@gmail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 2);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

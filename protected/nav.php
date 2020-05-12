@@ -1,28 +1,28 @@
 <hr>
 
-<a href="index.php">Kezdőlap</a>
+<a href="index.php"><b>Kezdőlap</b></a>
 <?php if(!IsUserLoggedIn()) : ?>
 	<span> &nbsp; | &nbsp; </span>
-	<a href="index.php?P=login">Belépés</a>
+	<a href="index.php?P=login"><b>Belépés</b></a>
 	<span> &nbsp; | &nbsp; </span>
-	<a href="index.php?P=register">Regisztráció</a>
+	<a href="index.php?P=register"><b>Regisztráció</b></a>
 <?php else : ?>
 	<span> &nbsp; | &nbsp; </span>
-	<a href="index.php?P=test">Jogosultsági szint</a>
+	<a href="index.php?P=test"><b>Jogosultsági szint</b></a>
 
 	<?php if(isset($_SESSION['permission']) && $_SESSION['permission'] >= 1) : ?>
 		<span> &nbsp; || &nbsp; </span>
-		<a href="index.php?P=users">Felhasználók listája</a>
+		<a href="index.php?P=users"><b>Felhasználók listája</b></a>
 		<span> &nbsp; | &nbsp; </span>
-		<a href="index.php?P=list_worker">Égitestek lista</a>
+		<a href="index.php?P=list_player"><b>Játékosok listája</b></a>
 		<span> &nbsp; | &nbsp; </span>
-		<a href="index.php?P=add_worker">Égitest hozzáadása</a>
+		<a href="index.php?P=add_player"><b>Játékos hozzáadása</b></a>
 		<span> &nbsp; || &nbsp; </span>
 	<?php else : ?>
 		<span> &nbsp; | &nbsp; </span>
 	<?php endif; ?>
 
-	<a href="index.php?P=logout">Kilépés</a>
+	<a href="index.php?P=logout"><b>Kilépés</b></a>
 <?php endif; ?>
 
 <hr>

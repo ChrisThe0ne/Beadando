@@ -6,13 +6,12 @@ switch ($_GET['P']) {
 	case 'home': require_once PROTECTED_DIR.'normal/home.php'; break;
 	case 'test': require_once PROTECTED_DIR.'normal/permission_test.php'; break;
 
-	case 'worker': require_once PROTECTED_DIR.'worker/profile.php'; break;
 
-	case 'add_worker': IsUserLoggedIn() ? require_once PROTECTED_DIR.'worker/add.php' : header('Location: index.php'); break;
+	case 'add_player': IsUserLoggedIn() ? require_once PROTECTED_DIR.'player/add.php' : header('Location: index.php'); break;
 
-	case 'edit_worker': IsUserLoggedIn() ? require_once PROTECTED_DIR.'worker/edit.php' : header('Location: index.php'); break;
+	case 'edit_player': IsUserLoggedIn() ? require_once PROTECTED_DIR.'player/edit.php' : header('Location: index.php'); break;
 
-	case 'list_worker': IsUserLoggedIn() ? require_once PROTECTED_DIR.'worker/list.php' : header('Location: index.php'); break;
+	case 'list_worker': IsUserLoggedIn() ? require_once PROTECTED_DIR.'player/list.php' : header('Location: index.php'); break;
 
 	case 'login': !IsUserLoggedIn() ? require_once PROTECTED_DIR.'user/login.php' : header('Location: index.php'); break;
 
