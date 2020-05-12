@@ -4,7 +4,7 @@
 	if(!array_key_exists('w', $_GET) || empty($_GET['w'])) : 
 		header('Location: index.php');
 else: 
-	if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['editWorker'])) {
+	if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['editPlayer'])) {
 		$postData = [
 			'id' => $_POST['workerId'],
 			'first_name' => $_POST['first_name'],
