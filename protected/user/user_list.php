@@ -13,10 +13,10 @@
 			<thead>
 				<tr>
 					<th scope="col">#</th>
-					<th scope="col">First Name</th>
-					<th scope="col">Last Name</th>
-					<th scope="col">Email</th>
-					<th scope="col">Permission</th>
+					<th scope="col">Vezetéknév</th>
+					<th scope="col">Keresztnév</th>
+					<th scope="col">Email-cím</th>
+					<th scope="col">Jogosultsági szint</th>
 				</tr>
 			</thead>
 			<tbody>
