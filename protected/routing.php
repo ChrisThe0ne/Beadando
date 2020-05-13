@@ -9,9 +9,15 @@ switch ($_GET['P']) {
 
 	case 'add_player': IsUserLoggedIn() ? require_once PROTECTED_DIR.'player/add.php' : header('Location: index.php'); break;
 
+	case 'add_stadium': IsUserLoggedIn() ? require_once PROTECTED_DIR.'stadium/add.php' : header('Location: index.php'); break;
+
 	case 'edit_player': IsUserLoggedIn() ? require_once PROTECTED_DIR.'player/edit.php' : header('Location: index.php'); break;
 
+	case 'edit_stadium': IsUserLoggedIn() ? require_once PROTECTED_DIR.'stadium/edit.php' : header('Location: index.php'); break;
+
 	case 'list_player': IsUserLoggedIn() ? require_once PROTECTED_DIR.'player/list.php' : header('Location: index.php'); break;
+
+	case 'list_stadium': IsUserLoggedIn() ? require_once PROTECTED_DIR.'stadium/list.php' : header('Location: index.php'); break;
 
 	case 'login': !IsUserLoggedIn() ? require_once PROTECTED_DIR.'user/login.php' : header('Location: index.php'); break;
 

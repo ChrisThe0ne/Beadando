@@ -1,1 +1,1 @@
-Bencsik Krisztián beadandó - Futballisták és csapatok
+Bencsik Krisztián beadandó - Futballisták és stadionok
