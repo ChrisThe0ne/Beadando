@@ -107,10 +107,10 @@ else:
 
 
 
-		<button type="submit" class="btn btn-primary" name="editPlayer">Mentés</button>
+		<button type="submit" class="btn btn-primary" name="editPlayer" id="gomb">Mentés</button>
 	</form>
 	</td>
-	<td>
+	<td id="leiras">
 		<p><b>Név</b> - A játékos neve, maximum 64 karakter</p>
 		<p><b>Klub</b> - A játékos jelenlegi csapataának neve, maximum 64 karakter</p>
 		<p><b>Nemzetiség</b> - Az ország ahonnan származik a játékos, maximum 64 karakter</p>
