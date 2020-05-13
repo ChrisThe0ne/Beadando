@@ -5,11 +5,19 @@ a {
 	color: #2C5F2D;
 }
 input[type=text] {
-	width: 20%;
-}
-select {
-	width: 100px;
+	width: 80%;
 }
 input[type=number] {
-	width: 5%;
+	width: 15%;
+}
+table{
+	background-color: rgb(97,192,123);
+	color: rgb(40,90,55);
+	border: rgb(40,90,55);
+}
+#playerLeague {
+	width: 80%
+}
+nav {
+    text-align: center;
 }
