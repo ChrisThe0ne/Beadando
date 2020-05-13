@@ -3,7 +3,7 @@
 <?php else : ?>
 	<?php 
 		if(array_key_exists('d', $_GET) && !empty($_GET['d'])) {
-			$query = "DELETE FROM workers WHERE id = :id";
+			$query = "DELETE FROM players WHERE id = :id";
 			$params = [':id' => $_GET['d']];
 			require_once DATABASE_CONTROLLER;
 			if(!executeDML($query, $params)) {
@@ -12,39 +12,43 @@
 		}
 	?>
 <?php 
-	$query = "SELECT id, first_name, last_name, email, gender, nationality FROM workers ORDER BY first_name ASC";
+	$query = "SELECT id, name, club, nationality, league, pace, shooting, defending FROM players ORDER BY name ASC";
 	require_once DATABASE_CONTROLLER;
-	$workers = getList($query);
+	$players = getList($query);
 ?>
-	<?php if(count($workers) <= 0) : ?>
-		<h1>No wokers found in the database</h1>
+	<?php if(count($players) <= 0) : ?>
+		<h1>Nincsenek játékosok az adatbázisban!</h1>
 	<?php else : ?>
 		<table class="table table-striped">
 			<thead>
 				<tr>
 					<th scope="col">#</th>
-					<th scope="col">First Name</th>
-					<th scope="col">Last Name</th>
-					<th scope="col">Email</th>
-					<th scope="col">Gender</th>
-					<th scope="col">Nationality</th>
+					<th scope="col">Név</th>
+					<th scope="col">Csapat</th>
+					<th scope="col">Nemzetiség</th>
+					<th scope="col">Liga</th>
+					<th scope="col">Gyorsaság</th>
+					<th scope="col">Lövés</th>
+					<th scope="col">Védekezés</th>
 					<th scope="col">Szerkesztés</th>
 					<th scope="col">Törlés</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php $i = 0; ?>
-				<?php foreach ($workers as $w) : ?>
+				<?php foreach ($players as $w) : ?>
 					<?php $i++; ?>
 					<tr>
 						<th scope="row"><?=$i ?></th>
-						<td><a href="?P=worker&w=<?=$w['id'] ?>"><?=$w['first_name'] ?></a></td>
-						<td><?=$w['last_name'] ?></td>
-						<td><?=$w['email'] ?></td>
-						<td><?=$w['gender'] == 0 ? 'Female' : ($w['gender'] == 1 ? 'Male' : 'Other') ?></td>
+						<td><?=$w['name'] ?></td>
+						<td><?=$w['club'] ?></td>
 						<td><?=$w['nationality'] ?></td>
-						<td><a href="?P=edit_worker&w=<?=$w['id'] ?>">Edit</a></td>
-						<td><a href="?P=list_worker&d=<?=$w['id'] ?>">Delete</a></td>
+						<td><?=$w['league'] == 0 ? 'Premier League' : ($w['league'] == 1 ? 'LaLiga' : ($w['league'] == 2 ? 'Serie A' : ($w['league'] == 3 ? 'Bundesliga' : ($w['league'] == 4 ? 'Ligue 1' : ($w['league'] == 5 ? 'Egyéb liga' : 'x'))))) ?></td>
+						<td><?=$w['pace'] ?></td>
+						<td><?=$w['shooting'] ?></td>
+						<td><?=$w['defending'] ?></td>
+						<td><a href="?P=edit_player&w=<?=$w['id'] ?>"><img src="img/edit.png"></a></td>
+						<td><a href="?P=list_player&d=<?=$w['id'] ?>"><img src="img/delete.png"></a></td>
 					</tr>
 				<?php endforeach;?>
 			</tbody>

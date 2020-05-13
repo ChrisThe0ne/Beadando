@@ -11,7 +11,7 @@ switch ($_GET['P']) {
 
 	case 'edit_player': IsUserLoggedIn() ? require_once PROTECTED_DIR.'player/edit.php' : header('Location: index.php'); break;
 
-	case 'list_worker': IsUserLoggedIn() ? require_once PROTECTED_DIR.'player/list.php' : header('Location: index.php'); break;
+	case 'list_player': IsUserLoggedIn() ? require_once PROTECTED_DIR.'player/list.php' : header('Location: index.php'); break;
 
 	case 'login': !IsUserLoggedIn() ? require_once PROTECTED_DIR.'user/login.php' : header('Location: index.php'); break;
 

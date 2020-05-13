@@ -62,8 +62,8 @@
 		      		<option value="1">LaLiga</option>
 		      		<option value="2">Serie A</option>
 		      		<option value="3">Bundesliga</option>
-		      		<option value="4">Bundesliga</option>
-		      		<option value="5">Other</option>
+		      		<option value="4">Ligue 1</option>
+		      		<option value="5">Egyéb liga</option>
 		    	</select>
 			</div>
 		</div>
