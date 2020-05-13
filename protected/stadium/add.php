@@ -70,7 +70,7 @@
 		</div>
 
 				<div class="form-row">
-			<div class="form-group col-md-12">
+			<div class="form-group col-md-6">
 		    	<label for="stadiumLevel"><b>Több emeletes</b></label>
 				<input type="checkbox" class="form-control" id="stadiumLevel" name="level">
 		  	</div>
